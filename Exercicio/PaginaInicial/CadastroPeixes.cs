@@ -39,7 +39,7 @@ namespace PaginaInicial
             }
             if (dgvTabelaPeixes.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Cadastre um carro");
+                MessageBox.Show("Cadastre um peixe");
                 return;
             }
             DialogResult caixaDeDialogo = MessageBox.Show("Deseja realmente apagar?", "AVISO", MessageBoxButtons.YesNo);
