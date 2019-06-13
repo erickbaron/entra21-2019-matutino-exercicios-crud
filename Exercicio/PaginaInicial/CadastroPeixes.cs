@@ -20,7 +20,14 @@ namespace PaginaInicial
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if(lblId == 0)
+            {
             Inserir();
+            }
+            else
+            {
+                Alterar();
+            }
         }
 
         private void Inserir()
