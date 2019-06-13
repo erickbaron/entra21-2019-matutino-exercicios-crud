@@ -20,7 +20,7 @@ namespace PaginaInicial
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
+            Inserir();
         }
 
         private void Inserir()
@@ -37,7 +37,7 @@ namespace PaginaInicial
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
-            comando.CommandText = @"INSTER INTO tabelaPeixes (nome, raca, preco, quantidade)
+            comando.CommandText = @"INSERT INTO tabelaPeixes (nome, raca, preco, quantidade)
                                     VALUES (@NOME, @RACA, @PRECO, @QUANTIDADE)";
             comando.Parameters.AddWithValue("@NOME", peixe.Nome);
             comando.Parameters.AddWithValue("@RACA", peixe.Raca);
@@ -55,7 +55,7 @@ namespace PaginaInicial
             txtNome.Clear();
             cbRaca.SelectedIndex = -1;
             mtbPreco.Clear();
-            nudQuantidade.Value = DateTime.Now.Year;
+            nudQuantidade.Value = 0;
         }
 
         private void AtualizarTabela()
@@ -70,12 +70,24 @@ namespace PaginaInicial
 
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
-            dgvTabelaPeixes.RowCount = 0;
-            for(int i = 0; i < tabela.Rows[]; i++)
+            //dgvTabelaPeixes.RowCount = 0;
+            for(int i = 0; i < tabela.Rows.Count; i++)
             {
                 DataRow linha = tabela.Rows[i];
-                Peixe peixe = new peixe();
+                Peixe peixe = new Peixe();
+                peixe.Id = Convert.ToInt32(linha["id"]);
+                peixe.Nome = linha["nome"].ToString();
+                peixe.Raca = linha["raca"].ToString();
+                peixe.Preco = Convert.ToDecimal(linha["preco"]);
+                peixe.Quantidade = Convert.ToInt32(linha["quantidade"]);
+                dgvTabelaPeixes.Rows.Add(new string[]
+                    {
+                        peixe.Id.ToString(), peixe.Nome.ToString(), peixe.Raca.ToString(), peixe.Preco.ToString(),
+                        peixe.Quantidade.ToString()
+                    });
             }
+
+            conexao.Close();
         }
 
 

@@ -41,6 +41,11 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnApagar = new System.Windows.Forms.Button();
             this.dgvTabelaPeixes = new System.Windows.Forms.DataGridView();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabelaPeixes)).BeginInit();
             this.SuspendLayout();
@@ -109,6 +114,18 @@
             // cbRaca
             // 
             this.cbRaca.FormattingEnabled = true;
+            this.cbRaca.Items.AddRange(new object[] {
+            "Tilápia",
+            "Carpa",
+            "Pacu",
+            "Bagre",
+            "Pirarocu",
+            "Piranha",
+            "Dourado",
+            "Espada",
+            "Baiacu",
+            "Garoupa",
+            "Robalo"});
             this.cbRaca.Location = new System.Drawing.Point(16, 106);
             this.cbRaca.Name = "cbRaca";
             this.cbRaca.Size = new System.Drawing.Size(156, 21);
@@ -152,11 +169,47 @@
             this.dgvTabelaPeixes.AllowUserToAddRows = false;
             this.dgvTabelaPeixes.AllowUserToDeleteRows = false;
             this.dgvTabelaPeixes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTabelaPeixes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnId,
+            this.ColumnNome,
+            this.ColumnRaca,
+            this.ColumnPreco,
+            this.ColumnQuantidade});
             this.dgvTabelaPeixes.Location = new System.Drawing.Point(209, 13);
             this.dgvTabelaPeixes.Name = "dgvTabelaPeixes";
             this.dgvTabelaPeixes.ReadOnly = true;
             this.dgvTabelaPeixes.Size = new System.Drawing.Size(341, 251);
             this.dgvTabelaPeixes.TabIndex = 12;
+            // 
+            // ColumnId
+            // 
+            this.ColumnId.HeaderText = "Cód.";
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            // 
+            // ColumnNome
+            // 
+            this.ColumnNome.HeaderText = "Nome";
+            this.ColumnNome.Name = "ColumnNome";
+            this.ColumnNome.ReadOnly = true;
+            // 
+            // ColumnRaca
+            // 
+            this.ColumnRaca.HeaderText = "Raça";
+            this.ColumnRaca.Name = "ColumnRaca";
+            this.ColumnRaca.ReadOnly = true;
+            // 
+            // ColumnPreco
+            // 
+            this.ColumnPreco.HeaderText = "Preço";
+            this.ColumnPreco.Name = "ColumnPreco";
+            this.ColumnPreco.ReadOnly = true;
+            // 
+            // ColumnQuantidade
+            // 
+            this.ColumnQuantidade.HeaderText = "Quantidade";
+            this.ColumnQuantidade.Name = "ColumnQuantidade";
+            this.ColumnQuantidade.ReadOnly = true;
             // 
             // CadastroPeixes
             // 
@@ -200,5 +253,10 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnApagar;
         private System.Windows.Forms.DataGridView dgvTabelaPeixes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRaca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPreco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnQuantidade;
     }
 }

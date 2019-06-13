@@ -8,3 +8,14 @@ C:\Users\Alunos\source\repos\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.csp
 C:\Users\Alunos\source\repos\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.csproj.CoreCompileInputs.cache
 C:\Users\Alunos\source\repos\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.exe
 C:\Users\Alunos\source\repos\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.pdb
+T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\bin\Debug\PaginaInicial.exe.config
+T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\bin\Debug\PaginaInicial.exe
+T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\bin\Debug\PaginaInicial.pdb
+T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.csprojAssemblyReference.cache
+T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.CadastroPeixes.resources
+T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.PaginaInicial.resources
+T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.Properties.Resources.resources
+T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.csproj.GenerateResource.cache
+T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.csproj.CoreCompileInputs.cache
+T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.exe
+T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.pdb
