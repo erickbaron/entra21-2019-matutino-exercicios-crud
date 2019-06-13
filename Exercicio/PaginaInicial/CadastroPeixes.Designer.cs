@@ -163,6 +163,7 @@
             this.btnApagar.TabIndex = 11;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // dgvTabelaPeixes
             // 
@@ -178,8 +179,10 @@
             this.dgvTabelaPeixes.Location = new System.Drawing.Point(209, 13);
             this.dgvTabelaPeixes.Name = "dgvTabelaPeixes";
             this.dgvTabelaPeixes.ReadOnly = true;
+            this.dgvTabelaPeixes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTabelaPeixes.Size = new System.Drawing.Size(341, 251);
             this.dgvTabelaPeixes.TabIndex = 12;
+            this.dgvTabelaPeixes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTabelaPeixes_CellDoubleClick);
             // 
             // ColumnId
             // 
@@ -231,6 +234,7 @@
             this.Controls.Add(this.lblCod);
             this.Name = "CadastroPeixes";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.CadastroPeixes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabelaPeixes)).EndInit();
             this.ResumeLayout(false);
