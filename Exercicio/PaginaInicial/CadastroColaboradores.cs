@@ -55,13 +55,13 @@ namespace PaginaInicial
             colaboradores.Programador = programador;
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
             comando.CommandText = @"INSERT INTO colaboradores (nome, cpf, salario, sexo, cargo, programador)
-                                    VAUES(@NOME, @CPF, @SALARIO, @SEXO, @CARGO, @PROGRAMADOR)";
+                                    VALUES(@NOME, @CPF, @SALARIO, @SEXO, @CARGO, @PROGRAMADOR)";
 
             comando.Parameters.AddWithValue("@NOME",colaboradores.Nome);
             comando.Parameters.AddWithValue("@CPF",colaboradores.CPF);
@@ -69,9 +69,11 @@ namespace PaginaInicial
             comando.Parameters.AddWithValue("@SEXO", colaboradores.Sexo);
             comando.Parameters.AddWithValue("@CARGO",colaboradores.Cargo);
             comando.Parameters.AddWithValue("@PROGRAMADOR",colaboradores.Programador);
-
+            comando.ExecuteNonQuery();
+            MessageBox.Show("Cadastro efetuado");
             LimparCampos();
             conexao.Close();
+            AtualiarTabela();
             
         }
 
@@ -116,7 +118,7 @@ namespace PaginaInicial
             rbFeminino.Checked = false;
             rbMasculino.Checked = false;
             cbCargo.SelectedIndex = -1;
-
+            ckbProgramador.Checked = false;
         }
 
         public void AtualiarTabela()
@@ -127,22 +129,54 @@ namespace PaginaInicial
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
-            comando.CommandText = @"SELECT id, nome, cpf, salario, seo, cargo, programador FROM colaboradores";
+            comando.CommandText = @"SELECT id, nome, cpf, salario, sexo, cargo, programador FROM colaboradores";
 
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
             dgvTabelaColaboradore.RowCount = 0;
+
+            for (int i = 0; i < tabela.Rows.Count; i++)
+            {
+                DataRow linha = tabela.Rows[i];
+                Colaboradores colaboradores = new Colaboradores();
+                colaboradores.Id = Convert.ToInt32(linha["id"]);
+                colaboradores.Nome = linha["nome"].ToString();
+                colaboradores.CPF = linha["cpf"].ToString();
+                colaboradores.Salario = Convert.ToDecimal(linha["salario"]);
+                colaboradores.Sexo = linha["sexo"].ToString();
+                colaboradores.Cargo = linha["cargo"].ToString();
+                colaboradores.Programador = Convert.ToBoolean(linha["programador"]);
+                dgvTabelaColaboradore.Rows.Add(new string[]
+                    {
+                        colaboradores.Id.ToString(), colaboradores.Nome.ToString(), colaboradores.CPF.ToString(), colaboradores.Salario.ToString(),
+                        colaboradores.Sexo.ToString() , colaboradores.Cargo.ToString(), colaboradores.Programador.ToString()
+                    });
+                conexao.Close();
+                
+            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
+            if(lblId.Text == "0")
+            {
+                Inserir();
+            }
+            else
+            {
+                Alterar();
+            }
         }
 
         private void btnApagar_Click(object sender, EventArgs e)
         {
 
 
+        }
+
+        private void CadastroColaboradores_Load(object sender, EventArgs e)
+        {
+            AtualiarTabela();
         }
     }
 }

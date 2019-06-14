@@ -15,3 +15,4 @@ sexo VARCHAR(15),
 cargo VARCHAR (25),
 programador BIT
 );
+

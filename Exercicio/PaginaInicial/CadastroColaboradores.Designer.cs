@@ -128,6 +128,7 @@
             // mtbCPF
             // 
             this.mtbCPF.Location = new System.Drawing.Point(15, 78);
+            this.mtbCPF.Mask = "000.000.000-00";
             this.mtbCPF.Name = "mtbCPF";
             this.mtbCPF.Size = new System.Drawing.Size(100, 20);
             this.mtbCPF.TabIndex = 10;
@@ -164,6 +165,11 @@
             // cbCargo
             // 
             this.cbCargo.FormattingEnabled = true;
+            this.cbCargo.Items.AddRange(new object[] {
+            "Repositor",
+            "Médico",
+            "Gari",
+            "Catador de latinha"});
             this.cbCargo.Location = new System.Drawing.Point(15, 243);
             this.cbCargo.Name = "cbCargo";
             this.cbCargo.Size = new System.Drawing.Size(121, 21);
@@ -284,6 +290,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Name = "CadastroColaboradores";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.CadastroColaboradores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabelaColaboradore)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
