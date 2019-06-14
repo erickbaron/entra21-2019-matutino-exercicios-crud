@@ -73,7 +73,7 @@ namespace PaginaInicial
             MessageBox.Show("Cadastro efetuado");
             LimparCampos();
             conexao.Close();
-            AtualiarTabela();
+            AtualizarTabela();
             
         }
 
@@ -121,7 +121,7 @@ namespace PaginaInicial
             ckbProgramador.Checked = false;
         }
 
-        public void AtualiarTabela()
+        public void AtualizarTabela()
         {
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
@@ -170,13 +170,87 @@ namespace PaginaInicial
 
         private void btnApagar_Click(object sender, EventArgs e)
         {
+            if (dgvTabelaColaboradore.Rows.Count < 0)
+            {
+                MessageBox.Show("Selecione um registro");
+                return;
+            }
+            if (dgvTabelaColaboradore.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Cadastre um colaborador");
+                return;
+            }
+            DialogResult caixaDeDialogo = MessageBox.Show("Deseja realmente apagar?", "AVISO", MessageBoxButtons.YesNo);
+            if (caixaDeDialogo == DialogResult.Yes)
+            {
+                SqlConnection conexao = new SqlConnection();
+                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
+                conexao.Open();
 
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexao;
+                comando.CommandText = @"DELETE FROM colaboradores
+                                        WHERE id = @ID";
 
+                int id = Convert.ToInt32(dgvTabelaColaboradore.CurrentRow.Cells[0].Value);
+                comando.Parameters.AddWithValue("@ID", id);
+                comando.ExecuteNonQuery();
+
+                conexao.Close();
+                AtualizarTabela();
+
+            }
         }
 
         private void CadastroColaboradores_Load(object sender, EventArgs e)
         {
-            AtualiarTabela();
+            AtualizarTabela();
+        }
+
+        private void dgvTabelaColaboradore_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.Open();
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexao;
+            comando.CommandText = @"SELECT id, nome, cpf, salario, sexo, cargo, programador FROM colaboradores";
+
+            DataTable tabela = new DataTable();
+            tabela.Load(comando.ExecuteReader());
+            DataRow linha = tabela.Rows[0];
+
+            Colaboradores colaboradores = new Colaboradores();
+            colaboradores.Id = Convert.ToInt32(linha["id"]);
+            colaboradores.Nome = linha["nome"].ToString();
+            colaboradores.CPF = linha["cpf"].ToString();
+            colaboradores.Salario = Convert.ToDecimal(linha["salario"]);
+            colaboradores.Sexo = linha["sexo"].ToString();
+            colaboradores.Cargo = linha["cargo"].ToString();
+            colaboradores.Programador = Convert.ToBoolean(linha["programador"]);
+
+            lblId.Text = colaboradores.Id.ToString();
+            txtNome.Text = colaboradores.Nome.ToString();
+            mtbCPF.Text = colaboradores.CPF;
+            mtbSalario.Text = colaboradores.Salario.ToString();
+            
+            if(colaboradores.Sexo == "Feminino")
+            {
+                rbFeminino.Checked = true;
+            }
+            else
+            {
+                rbMasculino.Checked = true;
+            }
+
+            cbCargo.SelectedItem = colaboradores.Cargo;
+
+            if (colaboradores.Programador == true)
+            {
+            ckbProgramador.Checked = true;
+            }
+
         }
     }
 }

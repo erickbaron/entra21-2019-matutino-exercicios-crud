@@ -201,8 +201,10 @@
             this.dgvTabelaColaboradore.Location = new System.Drawing.Point(221, 30);
             this.dgvTabelaColaboradore.Name = "dgvTabelaColaboradore";
             this.dgvTabelaColaboradore.ReadOnly = true;
+            this.dgvTabelaColaboradore.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTabelaColaboradore.Size = new System.Drawing.Size(539, 267);
             this.dgvTabelaColaboradore.TabIndex = 16;
+            this.dgvTabelaColaboradore.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTabelaColaboradore_CellDoubleClick);
             // 
             // ColumnId
             // 
