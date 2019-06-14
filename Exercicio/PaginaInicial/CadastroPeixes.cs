@@ -122,6 +122,7 @@ namespace PaginaInicial
             conexao.Close();
             AtualizarTabela();
         }
+
         private void LimparCampos()
         {
             txtNome.Clear();

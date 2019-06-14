@@ -1,6 +1,6 @@
 ﻿namespace PaginaInicial
 {
-    partial class Form1
+    partial class CadastroColaboradores
     {
         /// <summary>
         /// Required designer variable.
@@ -40,9 +40,9 @@
             this.mtbSalario = new System.Windows.Forms.MaskedTextBox();
             this.rbMasculino = new System.Windows.Forms.RadioButton();
             this.rbFeminino = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.cbProgramador = new System.Windows.Forms.CheckBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cbCargo = new System.Windows.Forms.ComboBox();
+            this.ckbProgramador = new System.Windows.Forms.CheckBox();
+            this.dgvTabelaColaboradore = new System.Windows.Forms.DataGridView();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +52,7 @@
             this.ColumProgramador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnApagar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTabelaColaboradore)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -161,30 +161,30 @@
             this.rbFeminino.Text = "Feminino";
             this.rbFeminino.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cbCargo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(15, 243);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 14;
+            this.cbCargo.FormattingEnabled = true;
+            this.cbCargo.Location = new System.Drawing.Point(15, 243);
+            this.cbCargo.Name = "cbCargo";
+            this.cbCargo.Size = new System.Drawing.Size(121, 21);
+            this.cbCargo.TabIndex = 14;
             // 
-            // cbProgramador
+            // ckbProgramador
             // 
-            this.cbProgramador.AutoSize = true;
-            this.cbProgramador.Location = new System.Drawing.Point(15, 280);
-            this.cbProgramador.Name = "cbProgramador";
-            this.cbProgramador.Size = new System.Drawing.Size(86, 17);
-            this.cbProgramador.TabIndex = 15;
-            this.cbProgramador.Text = "Programador";
-            this.cbProgramador.UseVisualStyleBackColor = true;
+            this.ckbProgramador.AutoSize = true;
+            this.ckbProgramador.Location = new System.Drawing.Point(15, 280);
+            this.ckbProgramador.Name = "ckbProgramador";
+            this.ckbProgramador.Size = new System.Drawing.Size(86, 17);
+            this.ckbProgramador.TabIndex = 15;
+            this.ckbProgramador.Text = "Programador";
+            this.ckbProgramador.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvTabelaColaboradore
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTabelaColaboradore.AllowUserToAddRows = false;
+            this.dgvTabelaColaboradore.AllowUserToDeleteRows = false;
+            this.dgvTabelaColaboradore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTabelaColaboradore.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnId,
             this.ColumnNome,
             this.ColumnCPF,
@@ -192,11 +192,11 @@
             this.ColumnSeo,
             this.ColumnCargo,
             this.ColumProgramador});
-            this.dataGridView1.Location = new System.Drawing.Point(221, 30);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(539, 267);
-            this.dataGridView1.TabIndex = 16;
+            this.dgvTabelaColaboradore.Location = new System.Drawing.Point(221, 30);
+            this.dgvTabelaColaboradore.Name = "dgvTabelaColaboradore";
+            this.dgvTabelaColaboradore.ReadOnly = true;
+            this.dgvTabelaColaboradore.Size = new System.Drawing.Size(539, 267);
+            this.dgvTabelaColaboradore.TabIndex = 16;
             // 
             // ColumnId
             // 
@@ -258,17 +258,18 @@
             this.btnApagar.TabIndex = 18;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
-            // Form1
+            // CadastroColaboradores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnApagar);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.cbProgramador);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dgvTabelaColaboradore);
+            this.Controls.Add(this.ckbProgramador);
+            this.Controls.Add(this.cbCargo);
             this.Controls.Add(this.rbFeminino);
             this.Controls.Add(this.rbMasculino);
             this.Controls.Add(this.mtbSalario);
@@ -281,9 +282,9 @@
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.lblCodigo);
-            this.Name = "Form1";
+            this.Name = "CadastroColaboradores";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTabelaColaboradore)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,9 +304,9 @@
         private System.Windows.Forms.MaskedTextBox mtbSalario;
         private System.Windows.Forms.RadioButton rbMasculino;
         private System.Windows.Forms.RadioButton rbFeminino;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.CheckBox cbProgramador;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cbCargo;
+        private System.Windows.Forms.CheckBox ckbProgramador;
+        private System.Windows.Forms.DataGridView dgvTabelaColaboradore;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCPF;

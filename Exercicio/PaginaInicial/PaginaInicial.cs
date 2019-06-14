@@ -23,5 +23,11 @@ namespace PaginaInicial
             form.Visible = true;
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CadastroColaboradores form = new CadastroColaboradores();
+            form.Visible = true;
+        }
     }
 }
