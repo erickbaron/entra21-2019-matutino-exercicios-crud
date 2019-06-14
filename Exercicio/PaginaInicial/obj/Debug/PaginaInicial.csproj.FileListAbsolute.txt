@@ -19,3 +19,4 @@ T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInici
 T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.csproj.CoreCompileInputs.cache
 T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.exe
 T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.pdb
+T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.Form1.resources

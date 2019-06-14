@@ -46,7 +46,7 @@ namespace PaginaInicial
             if (caixaDeDialogo == DialogResult.Yes)
             {
                 SqlConnection conexao = new SqlConnection();
-                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Execicio.mdf;Integrated Security=True;Connect Timeout=30";
+                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
                 conexao.Open();
 
                 SqlCommand comando = new SqlCommand();
@@ -72,7 +72,7 @@ namespace PaginaInicial
             peixe.Quantidade = Convert.ToInt32(nudQuantidade.Value);
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Execicio.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -100,7 +100,7 @@ namespace PaginaInicial
             peixe.Quantidade = Convert.ToInt32(nudQuantidade.Value);
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Execicio.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -133,7 +133,7 @@ namespace PaginaInicial
         private void AtualizarTabela()
         {
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Execicio.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -168,7 +168,7 @@ namespace PaginaInicial
 
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Execicio.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
