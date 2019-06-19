@@ -101,7 +101,7 @@
             // mtbSaldo
             // 
             this.mtbSaldo.Location = new System.Drawing.Point(13, 70);
-            this.mtbSaldo.Mask = "000000,00";
+            this.mtbSaldo.Mask = "000000.00";
             this.mtbSaldo.Name = "mtbSaldo";
             this.mtbSaldo.Size = new System.Drawing.Size(100, 20);
             this.mtbSaldo.TabIndex = 2;

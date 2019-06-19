@@ -156,7 +156,7 @@ namespace PaginaInicial
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicios.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
-
+            
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
             comando.CommandText = @"SELECT id, nome, cpf, salario, sexo, cargo, programador FROM colaboradores";
