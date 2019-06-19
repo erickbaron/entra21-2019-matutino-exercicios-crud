@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PaginaInicial
 {
-    class Peixe
+    class Peixes
     {
         public int Id;
         public string Nome;

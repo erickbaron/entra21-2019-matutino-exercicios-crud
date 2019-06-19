@@ -20,3 +20,4 @@ T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInici
 T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.exe
 T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.pdb
 T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.CadastroColaboradores.resources
+T:\Documentos\GitHub\entra21-2019-matutino-exercicios-crud\Exercicio\PaginaInicial\obj\Debug\PaginaInicial.CadastroClientes.resources

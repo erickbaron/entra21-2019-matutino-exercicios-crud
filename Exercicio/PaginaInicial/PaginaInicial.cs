@@ -29,5 +29,11 @@ namespace PaginaInicial
             CadastroColaboradores form = new CadastroColaboradores();
             form.Visible = true;
         }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            CadastroClientes form = new CadastroClientes();
+            form.Visible = true;
+        }
     }
 }

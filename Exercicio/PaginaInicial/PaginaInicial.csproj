@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CadastroClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroClientes.Designer.cs">
+      <DependentUpon>CadastroClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes.cs" />
     <Compile Include="Colaboradores.cs" />
     <Compile Include="CadastroColaboradores.cs">
       <SubType>Form</SubType>
@@ -65,9 +72,12 @@
     <Compile Include="CadastroPeixes.Designer.cs">
       <DependentUpon>CadastroPeixes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Peixe.cs" />
+    <Compile Include="Peixes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CadastroClientes.resx">
+      <DependentUpon>CadastroClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadastroPeixes.resx">
       <DependentUpon>CadastroPeixes.cs</DependentUpon>
     </EmbeddedResource>

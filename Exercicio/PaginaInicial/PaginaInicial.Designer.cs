@@ -30,7 +30,7 @@
         {
             this.btnColaboradores = new System.Windows.Forms.Button();
             this.btnCadastroPeixes = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnColaboradores
@@ -53,21 +53,22 @@
             this.btnCadastroPeixes.UseVisualStyleBackColor = true;
             this.btnCadastroPeixes.Click += new System.EventHandler(this.btnCadastroPeixes_Click);
             // 
-            // button3
+            // btnClientes
             // 
-            this.button3.Location = new System.Drawing.Point(494, 71);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(221, 271);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnClientes.Location = new System.Drawing.Point(494, 71);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(221, 271);
+            this.btnClientes.TabIndex = 2;
+            this.btnClientes.Text = "Clientes";
+            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // PaginaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnColaboradores);
             this.Controls.Add(this.btnCadastroPeixes);
             this.Name = "PaginaInicial";
@@ -80,7 +81,7 @@
 
         private System.Windows.Forms.Button btnColaboradores;
         private System.Windows.Forms.Button btnCadastroPeixes;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnClientes;
     }
 }
 

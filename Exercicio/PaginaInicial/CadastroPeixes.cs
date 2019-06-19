@@ -46,7 +46,7 @@ namespace PaginaInicial
             if (caixaDeDialogo == DialogResult.Yes)
             {
                 SqlConnection conexao = new SqlConnection();
-                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
+                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicios.mdf;Integrated Security=True;Connect Timeout=30";
                 conexao.Open();
 
                 SqlCommand comando = new SqlCommand();
@@ -65,14 +65,14 @@ namespace PaginaInicial
 
         private void Inserir()
         {
-            Peixe peixe = new Peixe();
+            Peixes peixe = new Peixes();
             peixe.Nome = txtNome.Text;
             peixe.Raca = cbRaca.SelectedItem.ToString();
             peixe.Preco = Convert.ToDecimal(mtbPreco.Text);
             peixe.Quantidade = Convert.ToInt32(nudQuantidade.Value);
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicios.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -92,7 +92,7 @@ namespace PaginaInicial
 
         private void Alterar()
         {
-            Peixe peixe = new Peixe();
+            Peixes peixe = new Peixes();
             peixe.Id = Convert.ToInt32(lblId.Text);
             peixe.Nome = txtNome.Text;
             peixe.Raca = cbRaca.SelectedItem.ToString();
@@ -100,7 +100,7 @@ namespace PaginaInicial
             peixe.Quantidade = Convert.ToInt32(nudQuantidade.Value);
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicios.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -134,7 +134,7 @@ namespace PaginaInicial
         private void AtualizarTabela()
         {
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicios.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -147,7 +147,7 @@ namespace PaginaInicial
             for (int i = 0; i < tabela.Rows.Count; i++)
             {
                 DataRow linha = tabela.Rows[i];
-                Peixe peixe = new Peixe();
+                Peixes peixe = new Peixes();
                 peixe.Id = Convert.ToInt32(linha["id"]);
                 peixe.Nome = linha["nome"].ToString();
                 peixe.Raca = linha["raca"].ToString();
@@ -169,7 +169,7 @@ namespace PaginaInicial
 
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicios.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -182,7 +182,7 @@ namespace PaginaInicial
             tabela.Load(comando.ExecuteReader());
             DataRow linha = tabela.Rows[0];
 
-            Peixe peixe = new Peixe();
+            Peixes peixe = new Peixes();
             peixe.Id = Convert.ToInt32(linha["id"]);
             peixe.Nome = linha["nome"].ToString();
             peixe.Raca = linha["raca"].ToString();

@@ -26,7 +26,7 @@ namespace PaginaInicial
             colaboradores.Salario = Convert.ToDecimal(mtbSalario.Text);
 
             string sexo = "";
-            if(rbFeminino.Checked == true)
+            if (rbFeminino.Checked == true)
             {
                 sexo = "Feminino";
             }
@@ -36,7 +36,7 @@ namespace PaginaInicial
             }
             else
             {
-               MessageBox.Show("Selecione uma das opções para sexo");
+                MessageBox.Show("Selecione uma das opções para sexo");
                 return;
             }
             colaboradores.Sexo = sexo;
@@ -55,7 +55,7 @@ namespace PaginaInicial
             colaboradores.Programador = programador;
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicios.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -63,24 +63,25 @@ namespace PaginaInicial
             comando.CommandText = @"INSERT INTO colaboradores (nome, cpf, salario, sexo, cargo, programador)
                                     VALUES(@NOME, @CPF, @SALARIO, @SEXO, @CARGO, @PROGRAMADOR)";
 
-            comando.Parameters.AddWithValue("@NOME",colaboradores.Nome);
-            comando.Parameters.AddWithValue("@CPF",colaboradores.CPF);
-            comando.Parameters.AddWithValue("@SALARIO",colaboradores.Salario);
+            comando.Parameters.AddWithValue("@NOME", colaboradores.Nome);
+            comando.Parameters.AddWithValue("@CPF", colaboradores.CPF);
+            comando.Parameters.AddWithValue("@SALARIO", colaboradores.Salario);
             comando.Parameters.AddWithValue("@SEXO", colaboradores.Sexo);
-            comando.Parameters.AddWithValue("@CARGO",colaboradores.Cargo);
-            comando.Parameters.AddWithValue("@PROGRAMADOR",colaboradores.Programador);
+            comando.Parameters.AddWithValue("@CARGO", colaboradores.Cargo);
+            comando.Parameters.AddWithValue("@PROGRAMADOR", colaboradores.Programador);
             comando.ExecuteNonQuery();
             MessageBox.Show("Cadastro efetuado");
             LimparCampos();
             conexao.Close();
             AtualizarTabela();
-            
+
         }
 
         public void Alterar()
         {
+
             Colaboradores colaboradores = new Colaboradores();
-            colaboradores.Id = Convert.ToInt32(lblId);
+            colaboradores.Id = Convert.ToInt32(lblId.Text);
             colaboradores.Nome = txtNome.Text;
             colaboradores.CPF = mtbCPF.Text;
             colaboradores.Salario = Convert.ToDecimal(mtbSalario.Text);
@@ -107,6 +108,35 @@ namespace PaginaInicial
             {
                 colaboradores.Programador = false;
             }
+                SqlConnection conexao = new SqlConnection();
+                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicios.mdf;Integrated Security=True;Connect Timeout=30";
+                conexao.Open();
+
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexao;
+                comando.CommandText = @"UPDATE colaboradores SET 
+                                    nome = @NOME, 
+                                    cpf = @CPF, 
+                                    salario = @SALARIO,
+                                    sexo = @SEXO, 
+                                    cargo = @CARGO,
+                                    programador = @PROGRAMADOR
+                                    WHERE id = @ID;";
+
+            comando.Parameters.AddWithValue("@ID", colaboradores.Id);
+                comando.Parameters.AddWithValue("@NOME", colaboradores.Nome);
+                comando.Parameters.AddWithValue("@CPF", colaboradores.CPF);
+                comando.Parameters.AddWithValue("@SALARIO", colaboradores.Salario);
+                comando.Parameters.AddWithValue("@SEXO", colaboradores.Sexo);
+                comando.Parameters.AddWithValue("@CARGO", colaboradores.Cargo);
+                comando.Parameters.AddWithValue("@PROGRAMADOR", colaboradores.Programador);
+                comando.ExecuteNonQuery();
+
+                MessageBox.Show("Cadastro Alterado");
+                LimparCampos();
+                conexao.Close();
+                AtualizarTabela();
+            
 
         }
 
@@ -124,7 +154,7 @@ namespace PaginaInicial
         public void AtualizarTabela()
         {
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicios.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -152,13 +182,13 @@ namespace PaginaInicial
                         colaboradores.Sexo.ToString() , colaboradores.Cargo.ToString(), colaboradores.Programador.ToString()
                     });
                 conexao.Close();
-                
+
             }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if(lblId.Text == "0")
+            if (lblId.Text == "0")
             {
                 Inserir();
             }
@@ -184,7 +214,7 @@ namespace PaginaInicial
             if (caixaDeDialogo == DialogResult.Yes)
             {
                 SqlConnection conexao = new SqlConnection();
-                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
+                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicios.mdf;Integrated Security=True;Connect Timeout=30";
                 conexao.Open();
 
                 SqlCommand comando = new SqlCommand();
@@ -210,7 +240,7 @@ namespace PaginaInicial
         private void dgvTabelaColaboradore_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicios.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -234,8 +264,8 @@ namespace PaginaInicial
             txtNome.Text = colaboradores.Nome.ToString();
             mtbCPF.Text = colaboradores.CPF;
             mtbSalario.Text = colaboradores.Salario.ToString();
-            
-            if(colaboradores.Sexo == "Feminino")
+
+            if (colaboradores.Sexo == "Feminino")
             {
                 rbFeminino.Checked = true;
             }
@@ -248,7 +278,7 @@ namespace PaginaInicial
 
             if (colaboradores.Programador == true)
             {
-            ckbProgramador.Checked = true;
+                ckbProgramador.Checked = true;
             }
 
         }
